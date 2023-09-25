@@ -1,10 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import {Helmet} from "react-helmet";
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
-function Home():React.ReactElement{
-    return(
-        <>  
+function Home (): React.ReactElement {
+    return (
+        <>
             <Helmet>
                 <title>Home</title>
                 <meta name="description" content="Home Page" />
@@ -18,4 +17,4 @@ function Home():React.ReactElement{
 
 
 
-export default Home;
+export default Home
