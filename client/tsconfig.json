@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "module": "CommonJS",
+      "moduleSuffixes": [".tsx", ".jsx", "", ".ts"],
+      "target": "es5",
+      "allowJs": true,
+      "jsx": "preserve",
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "baseUrl":".",
+      "paths": {
+        "@/Components/*": ["src/components/*"],
+        "@/Layout/*": ["src/layout/*"],
+        "@/Pages/*": ["src/pages/*"]     
+    }
+    },
+    "include": [
+      "./src",
+      "src/components/*",
+      "src/layout/*",
+      "src/pages/*",
+    ],
+    "exclude": ["node_modules"],
+    
+    
+}
