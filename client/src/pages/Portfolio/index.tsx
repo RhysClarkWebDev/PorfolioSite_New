@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 // META DATA
 import meta from '@/Data/metaData'
 
-function Home (): React.ReactElement {
-    const thisPage = 'home'
+function Portfolio (): React.ReactElement {
+    const thisPage = 'portfolio'
 
     return (
         <>
@@ -14,7 +14,7 @@ function Home (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <p>Home Page</p>
+            <p>Portfolio Page</p>
         </>
     )
 }
@@ -22,4 +22,4 @@ function Home (): React.ReactElement {
 
 
 
-export default Home
+export default Portfolio

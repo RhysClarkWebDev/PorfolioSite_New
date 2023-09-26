@@ -16,7 +16,8 @@
       "paths": {
         "@/Components/*": ["src/components/*"],
         "@/Layout/*": ["src/layout/*"],
-        "@/Pages/*": ["src/pages/*"]     
+        "@/Pages/*": ["src/pages/*"],
+        "@/Data/*": ["src/data/*"],  
     }
     },
     "include": [

@@ -9,7 +9,8 @@ module.exports = {
         alias: {
             '@/Components': path.resolve(__dirname, 'src/components/'),
             '@/Layout': path.resolve(__dirname, 'src/layout/'),
-            '@/Pages': path.resolve(__dirname, 'src/pages/')
+            '@/Pages': path.resolve(__dirname, 'src/pages/'),
+            '@/Data': path.resolve(__dirname, 'src/data/'),
         },
 
         extensions: ['.wasm', '.ts', '.tsx', 'jsx', '.mjs', '.cjs', '.js', '.json']
