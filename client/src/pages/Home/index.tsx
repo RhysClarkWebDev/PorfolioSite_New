@@ -14,7 +14,9 @@ function Home (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <p>Home Page</p>
+            <main id="page-content">
+                Home Page
+            </main>
         </>
     )
 }

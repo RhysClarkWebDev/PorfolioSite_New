@@ -9,6 +9,9 @@ import Portfolio from '@/Pages/Portfolio'
 // LAYOUTS
 import LayoutWithHeaderFooter from '@/Layout/LayoutWithHeaderFooter'
 
+// STYLES
+import './globalStyle.scss'
+
 
 function App (): React.ReactElement {
     return (

@@ -1,0 +1,102 @@
+@keyframes menu-animation-out {
+    0% {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    45% {
+        -moz-transform: rotate(185deg);
+        -ms-transform: rotate(185deg);
+        -webkit-transform: rotate(185deg);
+        transform: rotate(185deg);
+    }
+    100% {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes menu-animation-in {
+    0% {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    45% {
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    100% {
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+.site-header {
+    & nav {
+        position: fixed;
+        background-color: #333;
+        z-index: 100;
+        padding: 10% 0;
+        -moz-transition: -moz-transform .45s cubic-bezier(.45,0,0,1);
+        -o-transition: -o-transform .45s cubic-bezier(.45,0,0,1);
+        -webkit-transition: -webkit-transform .45s cubic-bezier(.45,0,0,1);
+        transition: transform .45s cubic-bezier(.45,0,0,1);
+    }
+
+
+    & .menu-toggle {
+        position: fixed;
+        right: 35px;
+        top: 35px;
+        z-index: 999;
+        cursor: pointer;
+        padding: 5px 4px;
+        background-color: transparent;
+        
+        & i {
+            display: block;
+            width: 42px;
+            height: 2px;
+            margin: 8px;
+            background-color: #7a7a7a;
+
+
+            &:nth-child(n){
+                -moz-transition: -moz-transform .45s cubic-bezier(.43,.77,.15,1.5), background .3s ease;
+                -o-transition: -o-transform .45s cubic-bezier(.43,.77,.15,1.5), background .3s ease;
+                -webkit-transition: -webkit-transform .45s cubic-bezier(.43,.77,.15,1.5), background .3s ease;
+                transition: transform .45s cubic-bezier(.43,.77,.15,1.5), background .3s ease;
+            }
+        }
+
+
+
+        &.hover {
+            & i {
+                &:nth-child(1){
+                    -moz-transform: translate3d(0,-4px,0);
+                    -ms-transform: translate3d(0,-4px,0);
+                    -webkit-transform: translate3d(0,-4px,0);
+                    transform: translate3d(0,-4px,0);
+                }
+
+
+                &:nth-child(3){
+                    -moz-transform: translate3d(0,4px,0);
+                    -ms-transform: translate3d(0,4px,0);
+                    -webkit-transform: translate3d(0,4px,0);
+                    transform: translate3d(0,4px,0);
+                }
+            }
+        }
+    }
+}

@@ -14,7 +14,9 @@ function Portfolio (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <p>Portfolio Page</p>
+            <main id="page-content">
+                Portfolio Page
+            </main>
         </>
     )
 }

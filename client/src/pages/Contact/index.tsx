@@ -14,7 +14,9 @@ function Contact (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <p>Contact Page</p>
+            <main id="page-content">
+                Contact Page
+            </main>
         </>
     )
 }

@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react'
 
 
 // STYLE
-import './style.scss';
+import './style.scss'
 
 
 
-function Footer():React.ReactElement {
+function Footer (): React.ReactElement {
+    const [menuHover, setMenuHover] = useState(false)
+
+    const toggleMenu = (): void => {
+
+    }
+
+    const handleHover = (): void => {
+        this.classList.toggle('hover')
+    }
+
+
     return (
         <header className="site-header">
-            <p>Header</p>
+            <nav></nav>
+            <div className={menuHover ? 'menu-toggle hover' : 'menu-toggle'}
+                onClick={toggleMenu}
+                onMouseOver={() => {
+                    setMenuHover(true)
+                }}
+                onMouseLeave={() => {
+                    setMenuHover(false)
+                }}
+            >
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
         </header>
     )
 }
@@ -17,4 +41,4 @@ function Footer():React.ReactElement {
 
 
 
-export default Footer;
+export default Footer
