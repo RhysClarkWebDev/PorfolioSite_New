@@ -1,0 +1,47 @@
+/*CUSTOM MOUSE*/
+[class^="cursor"]{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  .cursor-inner{
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    transition: width 200ms ease-out, height 200ms ease-out;
+
+    & .cursor-pressed {
+        width: 50px;
+        height: 50px;
+    }
+  }
+  
+  .cursor-outer{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    transition: top 0.06s ease-out;
+    transition: left 0.06s ease-out, width 200ms ease-out, height 200ms ease-out;
+
+    &.cursor-hover {
+        width: 90px;
+        height: 90px;
+        background-color: #fff;
+        mix-blend-mode: difference;
+    }
+
+
+    &.cursor-hover-link {
+        width: 20px;
+        height: 20px;
+        background-color: #00a1a7;
+        mix-blend-mode: difference;
+    }
+  }
+  
+  
+  

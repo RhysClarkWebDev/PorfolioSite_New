@@ -1,22 +1,23 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 
 // STYLES
-import './style.scss';
+import './style.scss'
 
 // COMPONENTS
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../Header'
+import Footer from '../Footer'
+import Cursor from '@/Components/Cursor'
 
-
-function LayoutWithHeaderFooter(): React.ReactElement {
+function LayoutWithHeaderFooter (): React.ReactElement {
     return (
         <div>
             <Header/>
 
             <div className="body-content">
                 <Outlet/>
+                <Cursor/>
             </div>
 
             <Footer/>
@@ -26,4 +27,4 @@ function LayoutWithHeaderFooter(): React.ReactElement {
 
 
 
-export default LayoutWithHeaderFooter;
+export default LayoutWithHeaderFooter

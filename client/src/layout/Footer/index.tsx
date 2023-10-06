@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 
 // STYLE
-import './style.scss';
+import './style.scss'
 
 
 
-function Footer():React.ReactElement {
+function Footer (): React.ReactElement {
     return (
         <footer className="site-footer">
-            <p>Footer</p>
+            <p>Copyright {new Date().getFullYear()} - Rhys Clark</p>
         </footer>
     )
 }
@@ -17,4 +17,4 @@ function Footer():React.ReactElement {
 
 
 
-export default Footer;
+export default Footer

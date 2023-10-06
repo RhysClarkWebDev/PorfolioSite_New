@@ -6,8 +6,18 @@
 * {
     padding: 0px;
     margin: 0px;
+    cursor: none;
 }
 
 body{
     background-color: #2a2a2a;
+}
+
+p, li, a {
+    font-family: "Poppins", sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Camber", sans-serif;
 }
