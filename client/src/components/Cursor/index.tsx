@@ -6,8 +6,8 @@ function Cursor (): React.ReactElement {
     const mouseOuter = useRef<HTMLDivElement>(null)
     const mouseInner = useRef<HTMLDivElement>(null)
 
+    // FUNCTION TO MAKE CURSOR ALIGN WITH THE GENERIC CURSOR
     const handleMouseMove = (event: MouseEvent): void => {
-        console.log('MouseMove')
         const { clientX, clientY } = event
 
         if (mouseOuter.current != null) {
@@ -22,13 +22,79 @@ function Cursor (): React.ReactElement {
         }
     }
 
-
+    // ADD THE EVENT LISTENER TO THE CURSOR TO MAKE IT MOVE
     useEffect(() => {
         document.addEventListener('mousemove', handleMouseMove)
 
-
         return () => {
             document.removeEventListener('mousemove', handleMouseMove)
+        }
+    }, [])
+
+
+    // ADD HOVER EFFECTS TO PARAGRAPHS AND LINK ELEMENTS
+    useEffect(() => {
+        const allParagraphs = document.querySelectorAll('p')
+        const allLinks = document.querySelectorAll('a')
+
+        const handleParagraphMouseOver = (): void => {
+            mouseOuter.current?.classList.add('cursor-hover')
+        }
+
+        const handleParagraphMouseLeave = (): void => {
+            mouseOuter.current?.classList.remove('cursor-hover')
+        }
+
+        const handleLinkMouseOver = (): void => {
+            mouseOuter.current?.classList.add('cursor-hover-link')
+        }
+
+        const handleLinkMouseLeave = (): void => {
+            mouseOuter.current?.classList.remove('cursor-hover-link')
+        }
+
+        allParagraphs.forEach((paragraph) => {
+            paragraph.addEventListener('mouseover', handleParagraphMouseOver)
+            paragraph.addEventListener('mouseleave', handleParagraphMouseLeave)
+        })
+
+        allLinks.forEach((link) => {
+            link.addEventListener('mouseover', handleLinkMouseOver)
+            link.addEventListener('mouseleave', handleLinkMouseLeave)
+        })
+
+        return () => {
+            allParagraphs.forEach((paragraph) => {
+                paragraph.removeEventListener('mouseover', handleParagraphMouseOver)
+                paragraph.removeEventListener('mouseleave', handleParagraphMouseLeave)
+            })
+
+            allLinks.forEach((link) => {
+                link.removeEventListener('mouseover', handleLinkMouseOver)
+                link.removeEventListener('mouseleave', handleLinkMouseLeave)
+            })
+        }
+    }, [])
+
+
+    // ADD CLICK EVENTS TO THE MOUSE
+    useEffect(() => {
+        const handleMouseDown = (): void => {
+            mouseInner.current?.classList.add('cursor-pressed')
+        }
+
+        const handleMouseUp = (): void => {
+            mouseInner.current?.classList.remove('cursor-pressed')
+        }
+
+        document.addEventListener('mousedown', handleMouseDown)
+
+        document.addEventListener('mouseup', handleMouseUp)
+
+
+        return () => {
+            document.removeEventListener('mousedown', handleMouseDown)
+            document.removeEventListener('mouseup', handleMouseUp)
         }
     }, [])
 
@@ -37,19 +103,11 @@ function Cursor (): React.ReactElement {
             <div
                 className="cursor-outer"
                 ref={mouseOuter}
-                onMouseDown={() => {
-                    mouseOuter.current != null &&
-                    (mouseOuter.current).classList.add('cursor-pressed')
-                }}
             />
 
             <div
                 className="cursor-inner"
                 ref={mouseInner}
-                onMouseDown={() => {
-                    mouseInner.current != null &&
-                    (mouseInner.current).classList.add('cursor-pressed')
-                }}
             />
         </>
     )
