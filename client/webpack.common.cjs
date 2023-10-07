@@ -11,6 +11,7 @@ module.exports = {
             '@/Layout': path.resolve(__dirname, 'src/layout/'),
             '@/Pages': path.resolve(__dirname, 'src/pages/'),
             '@/Data': path.resolve(__dirname, 'src/data/'),
+            '@/SVG': path.resolve(__dirname, 'src/assets/svg/'),
         },
 
         extensions: ['.wasm', '.ts', '.tsx', 'jsx', '.mjs', '.cjs', '.js', '.json']

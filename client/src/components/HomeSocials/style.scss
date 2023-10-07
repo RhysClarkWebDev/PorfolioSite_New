@@ -1,0 +1,41 @@
+.home-socials {
+    position: absolute;
+    left: -40px;
+
+    & .social-link {
+        height: 60px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        transition: transform 300ms;
+        border-radius: 5px;
+
+        & svg {
+            width: 35px; 
+            height: 35px;
+            padding-right: 10px;
+        }
+
+
+        // HOVER EFFECT
+        &:hover {
+            transform: translateX(30px);
+        }
+
+
+        // BACKGROUND COLORS
+        &.instagram {
+            background-color: (circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%)
+        }
+        
+        &.linkedin {
+            background-color: #0077ba;
+        }
+        
+        &.github {
+            background-color: #4e545a;
+        }
+    }
+    
+}

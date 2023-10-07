@@ -45,6 +45,9 @@ function Footer (): React.ReactElement {
                 <Link to="/portfolio" onClick={toggleMenu}>
                     Portfolio
                 </Link>
+                <Link to="/skills" onClick={toggleMenu}>
+                    Skills
+                </Link>
                 <Link to="/contact" onClick={toggleMenu}>
                     Contact
                 </Link>

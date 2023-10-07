@@ -1,7 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-
 // STYLES
 import './style.scss'
 
@@ -15,7 +14,9 @@ function LayoutWithHeaderFooter (): React.ReactElement {
         <div>
             <Header/>
 
-            <div className="body-content">
+            <div
+                className="body-content"
+            >
                 <Outlet/>
                 <Cursor/>
             </div>

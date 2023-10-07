@@ -14,6 +14,11 @@ const metaData = {
     portfolio: {
         title: 'Portfolio | Full-Stack Web Developer | Rhys Clark',
         description: ''
+    },
+
+    skills: {
+        title: 'Skills | Full-Stack Web Developer | Rhys Clark',
+        description: ''
     }
 }
 
