@@ -45,11 +45,13 @@ function Cursor (): React.ReactElement {
             mouseOuter.current?.classList.remove('cursor-hover')
         }
 
-        const handleLinkMouseOver = (): void => {
+        function handleLinkMouseOver (): void {
+            mouseInner.current?.classList.add('cursor-hover-link')
             mouseOuter.current?.classList.add('cursor-hover-link')
         }
 
-        const handleLinkMouseLeave = (): void => {
+        function handleLinkMouseLeave (): void {
+            mouseInner.current?.classList.remove('cursor-hover-link')
             mouseOuter.current?.classList.remove('cursor-hover-link')
         }
 
@@ -59,7 +61,7 @@ function Cursor (): React.ReactElement {
         })
 
         allLinks.forEach((link) => {
-            link.addEventListener('mouseover', handleLinkMouseOver)
+            link.addEventListener('mousemove', handleLinkMouseOver)
             link.addEventListener('mouseleave', handleLinkMouseLeave)
         })
 

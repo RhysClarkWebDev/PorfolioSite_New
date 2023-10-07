@@ -1,0 +1,19 @@
+.github-banner {
+    width: 400px;
+    background-color: #5895d0;
+    height: 45px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: rotateZ(315deg) translate(-126px, -36px);
+
+    &:hover {
+        background-color: rgb(69, 138, 207);
+    }
+}

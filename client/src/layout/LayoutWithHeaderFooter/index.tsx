@@ -8,12 +8,13 @@ import './style.scss'
 import Header from '../Header'
 import Footer from '../Footer'
 import Cursor from '@/Components/Cursor'
+import GithubBanner from '@/Components/GithubBanner'
 
 function LayoutWithHeaderFooter (): React.ReactElement {
     return (
         <div>
             <Header/>
-
+            <GithubBanner/>
             <div
                 className="body-content"
             >

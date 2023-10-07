@@ -1,10 +1,16 @@
-import {configureStore} from '@reduxjs/toolkit';
-import {Provider} from 'react-redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+
+
+// SLICES
+import PageChangingSlice from './Slices/PageChangingSlice'
+
+
+const rootReducer = combineReducers({
+    pageChanging: PageChangingSlice
+})
 
 
 
 export const store = configureStore({
-    reducer: {
-
-    }
+    reducer: rootReducer
 })
