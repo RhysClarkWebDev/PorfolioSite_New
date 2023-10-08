@@ -41,6 +41,7 @@
 }
 
 .site-header {
+
     & nav {
         position: fixed;
         top: 0;
@@ -126,6 +127,7 @@
         cursor: pointer;
         padding: 5px 4px;
         background-color: transparent;
+        transition: transform var(--animation-timeframe);
         
         & i {
             display: block;
@@ -230,6 +232,16 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+// WHILE PAGE TRANSITIONING
+.animating {
+    & .site-header {
+        & .menu-toggle {
+            transform: translateX(100px)
         }
     }
 }

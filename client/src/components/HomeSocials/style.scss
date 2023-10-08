@@ -1,6 +1,8 @@
 .home-socials {
     position: absolute;
     left: -40px;
+    transition: transform var(--animation-timeframe);
+
 
     & .social-link {
         height: 60px;
@@ -37,5 +39,12 @@
             background-color: #4e545a;
         }
     }
-    
+}
+
+// DURING PAGE TRANSITION
+.animating {
+    & .home-socials {
+        transform: translateX(-60px);
+
+    }
 }

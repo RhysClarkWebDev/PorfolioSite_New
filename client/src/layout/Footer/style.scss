@@ -3,9 +3,19 @@ footer {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    transition: transform var(--animation-timeframe) ease-in-out;
+    width: 100vw;
     
     & p {
         color: white;
         text-align: center;
+    }
+}
+
+
+.animating {
+    & footer {
+        position: fixed;
+        // transform: translate(-50%, 70px);
     }
 }

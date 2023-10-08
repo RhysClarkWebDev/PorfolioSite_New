@@ -5,6 +5,16 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import PageChangingSlice from './Slices/PageChangingSlice'
 
 
+export interface RootState {
+    pageChanging: {
+        isPageChanging: boolean
+        pageChangeState: unknown
+        pageChangeDirection: string
+    }
+}
+
+
+
 const rootReducer = combineReducers({
     pageChanging: PageChangingSlice
 })

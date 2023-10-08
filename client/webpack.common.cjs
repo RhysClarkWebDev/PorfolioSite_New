@@ -11,6 +11,8 @@ module.exports = {
             '@/Layout': path.resolve(__dirname, 'src/layout/'),
             '@/Pages': path.resolve(__dirname, 'src/pages/'),
             '@/Data': path.resolve(__dirname, 'src/data/'),
+            '@/Hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@/Slices': path.resolve(__dirname, 'src/store/Slices/'),
             '@/SVG': path.resolve(__dirname, 'src/assets/svg/'),
         },
 

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 
 // COMPONENTS
 import HomeSocials from '@/Components/HomeSocials'
+import ParticleText from './Components/ParticleText'
 
 // META DATA
 import meta from '@/Data/metaData'
@@ -24,12 +25,7 @@ function Home (): React.ReactElement {
 
             <main id="page-content">
                 <HomeSocials/>
-                <section className="current">
-
-                </section>
-                <section className="loader">
-
-                </section>
+                <ParticleText/>
             </main>
         </div>
     )

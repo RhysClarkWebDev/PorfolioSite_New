@@ -9,11 +9,19 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 0px;
+    top: -45px;
     left: 0px;
-    transform: rotateZ(315deg) translate(-126px, -36px);
+    transform: rotateZ(315deg) translate(-160px, -6px);
+    transition: transform var(--animation-timeframe);
 
     &:hover {
         background-color: rgb(69, 138, 207);
+    }
+}
+
+
+.animating {
+    & .github-banner {
+        transform: rotateZ(315deg) translate(-160px, -172px);
     }
 }

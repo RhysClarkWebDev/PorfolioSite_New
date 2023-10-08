@@ -1,0 +1,88 @@
+.about-container {
+  overflow: hidden;
+
+  & .particle-text {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & h1 {
+          font-size: 28px;
+          color: #b6b6b6;
+          margin-bottom: 5px;
+      }
+
+      & p {
+          font-size: 18px;
+          color: #9a9a9a;
+          line-height: 1.8;
+
+
+          & a {
+            font-weight: bold;
+            color: #9a9a9a;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: -5px;
+              top: 0;
+              width: 0%;
+              height: 30px;
+              z-index: -1;
+              background-color: rgba(88, 149, 208, .5);
+              transition: width var(--animation-timeframe);
+            }
+
+
+            &:hover {
+              &::after{
+                width: calc(100% + 10px);
+              }
+            }
+          }
+      }
+
+      & .typing-cursor {
+          display: inline-block;
+          width: 2px;
+          background-color: #ccc;
+          -webkit-animation: blink 1000ms infinite;
+                  animation: blink 1000ms infinite;
+          position: relative;
+          margin-left: 0.2rem;
+      }
+
+      & canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+      }
+  }
+}
+
+
+@-webkit-keyframes blink {
+    0% { background-color: #ccc; }
+      49% { background-color: #ccc; }
+        50% { background-color: transparent; }
+          99% { background-color: transparent; }
+            100% { background-color: #ccc; }
+  }
+  @keyframes blink {
+    0% { background-color: #ccc; }
+      49% { background-color: #ccc; }
+        50% { background-color: transparent; }
+          99% { background-color: transparent; }
+            100% { background-color: #ccc; }
+  }

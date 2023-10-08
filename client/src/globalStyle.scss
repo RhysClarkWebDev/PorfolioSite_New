@@ -3,6 +3,10 @@
     src: url('./assets/fonts/Camber.otf')format("opentype");
 }
 
+:root {
+    --animation-timeframe: 300ms;
+}
+
 * {
     padding: 0px;
     margin: 0px;

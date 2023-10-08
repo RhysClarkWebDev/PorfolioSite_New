@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isPageChanging: false,
+    pageChangeState: null,
     pageChangeDirection: null
 }
 
@@ -11,10 +12,14 @@ const pageChangingSlice = createSlice({
     initialState,
     reducers: {
         updatePageLoading: (state, action) => {
-            const { isPageChanging, direction } = action.payload
+            const { isPageChanging, pageChangeState, direction } = action.payload
 
             state.isPageChanging = isPageChanging
+            state.pageChangeState = pageChangeState
             state.pageChangeDirection = direction
+        },
+        resetPageState: (state, action) => {
+            state = initialState
         }
     }
 })

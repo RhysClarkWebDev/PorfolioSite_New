@@ -17,7 +17,9 @@
         "@/Components/*": ["src/components/*"],
         "@/Layout/*": ["src/layout/*"],
         "@/Pages/*": ["src/pages/*"],
-        "@/Data/*": ["src/data/*"],  
+        "@/Data/*": ["src/data/*"],
+        "@/Hooks/*": ["src/hooks/*"],
+        "@/Slices/*": ["src/store/Slices/*"],
         "@/SVG/*": ["src/assets/svg/*"],  
     }
     },
