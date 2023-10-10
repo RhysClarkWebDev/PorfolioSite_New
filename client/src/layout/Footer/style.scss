@@ -19,3 +19,11 @@ footer {
         // transform: translate(-50%, 70px);
     }
 }
+
+
+
+@media only screen and (max-width: 360px){
+    footer{
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+/* src/components/Skill.css */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  
+  & .progress-ring {
+    transform: rotate(-90deg);
+
+    & .progress-ring-circle {
+      stroke: #f0f0f0;
+    }
+    
+    & .progress-ring-progress {
+      stroke: #5895d0;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s ease-in-out;
+    }
+  }
+
+
+  & .skill-spec {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    & .skill-name {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    
+    & .percentage {
+      font-size: 19px;
+    }
+  }
+}
+
+
+
+
+

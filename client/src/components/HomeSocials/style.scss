@@ -48,3 +48,26 @@
 
     }
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .home-socials {
+        left: -55px;
+        
+        & .social-link {
+            height: 50px;
+
+            & svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    .home-socials {
+        bottom: 35px;
+    }
+}

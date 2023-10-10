@@ -16,7 +16,7 @@ function Home (): React.ReactElement {
 
     return (
 
-        <div className={'body-content'}>
+        <>
 
             <Helmet>
                 <title>{meta[thisPage].title}</title>
@@ -27,7 +27,7 @@ function Home (): React.ReactElement {
                 <HomeSocials/>
                 <ParticleText/>
             </main>
-        </div>
+        </>
     )
 }
 

@@ -19,6 +19,7 @@ body{
 
 p, li, a {
     font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 
 
@@ -29,15 +30,16 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
     color: white;
+    flex-direction: column;
     font-family: "Camber", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 3rem;
     width: 100vw;
     background-color: #2a2a2a;
-
+    height: auto;
 }
 
 

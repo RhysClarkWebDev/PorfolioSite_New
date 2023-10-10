@@ -3,18 +3,24 @@ import './style.scss'
 
 function ParticleText (): React.ReactElement {
     const textRef = useRef<HTMLDivElement>(null)
-    const canvasRef = useRef(null)
-    const particles = []
+    const canvasRef = useRef<HTMLCanvasElement>(null)
+    const particles: any[] = []
 
 
     class Particle {
-        constructor (x, y, vx, vy) {
+        x: number
+        y: number
+        vx: number
+        vy: number
+        color: string
+        size: number
+        constructor (x: number, y: number, vx: number, vy: number) {
             this.x = x
             this.y = y
-            this.vx = vx || Math.random() * 2 - 1
-            this.vy = vy || Math.random() * 2 - 1
+            this.vx = vx
+            this.vy = vy
             this.color = '#9a9a9a'
-            this.size = Math.random() * 2 + 1
+            this.size = Math.random() * 2
         }
 
         update (): void {
@@ -22,7 +28,11 @@ function ParticleText (): React.ReactElement {
             this.y += this.vy
         }
 
-        draw (ctx): void {
+        draw (ctx: {
+            fillStyle: string
+            beginPath: () => void
+            arc: (arg0: number, arg1: number, arg2: number, arg3: number, arg4: number) => void
+            fill: () => void }): void {
             ctx.fillStyle = this.color
             ctx.beginPath()
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
@@ -34,7 +44,17 @@ function ParticleText (): React.ReactElement {
     const introText = [
         {
             element: 'h1',
-            text: 'Hello, my name is Rhys Clark.'
+            text: [
+                {
+                    initial: 'Hello! My name is  ',
+                    child: {
+                        element: 'span',
+                        text: 'Rhys Clark.',
+                        link: '/skills',
+                        class: 'name'
+                    }
+                }
+            ]
         },
 
         {
@@ -51,7 +71,21 @@ function ParticleText (): React.ReactElement {
             element: 'p',
             text: [
                 {
-                    initial: 'Feel free to checkout my recent work on the ',
+                    initial: 'To see where my knowledge base lies, please view ',
+                    child: {
+                        element: 'a',
+                        text: 'My Skills.',
+                        link: '/skills'
+                    }
+                }
+            ]
+        },
+
+        {
+            element: 'p',
+            text: [
+                {
+                    initial: 'Or, feel free to checkout my recent work on the ',
                     child: {
                         element: 'a',
                         text: 'Portfolio Page',
@@ -60,6 +94,7 @@ function ParticleText (): React.ReactElement {
                 }
             ]
         }
+
     ]
 
     async function typeText (): Promise<void> {
@@ -69,7 +104,6 @@ function ParticleText (): React.ReactElement {
                 const el = document.createElement(textElement.element)
 
                 textElement.text.map((child): null => {
-                    console.log(el)
                     const initialLetters = child.initial.split('')
 
                     initialLetters.forEach((letter: string) => {
@@ -83,6 +117,10 @@ function ParticleText (): React.ReactElement {
 
                     if (childElement instanceof HTMLAnchorElement) {
                         childElement.href = child.child.link
+                    }
+
+                    if (child.child.class !== null) {
+                        childElement.classList.add(child.child.class)
                     }
 
                     const childLetters = child.child.text.split('')
@@ -118,10 +156,10 @@ function ParticleText (): React.ReactElement {
     }
 
     // Function to create particles at a given position
-    function createParticlesAtPosition (x, y, numParticles): void {
+    function createParticlesAtPosition (x: number, y: number, numParticles: number): void {
         for (let i = 0; i < numParticles; i++) {
-            const angle = Math.random() * 2 * Math.PI // Random angle in radians
-            const speed = Math.random() * 3 + 1 // Random speed
+            const angle = Math.PI / 2.2
+            const speed = Math.random() * 3 + 3
             const vx = Math.cos(angle) * speed
             const vy = Math.sin(angle) * speed
             particles.push(new Particle(x, y, vx, vy))
@@ -133,7 +171,7 @@ function ParticleText (): React.ReactElement {
         const canvas = canvasRef.current
         const ctx = canvas?.getContext('2d')
 
-        if (canvas !== undefined) {
+        if (canvas !== null) {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
         }
@@ -146,13 +184,15 @@ function ParticleText (): React.ReactElement {
         })
 
         function updateParticles (): void {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            particles.forEach((particle) => {
-                particle.update()
-                particle.draw(ctx)
-            })
+            if (ctx !== undefined && ctx !== null && canvas !== null) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+                particles.forEach((particle) => {
+                    particle.update()
+                    particle.draw(ctx)
+                })
 
-            requestAnimationFrame(updateParticles)
+                requestAnimationFrame(updateParticles)
+            }
         }
 
         // Start the animation loop
@@ -181,7 +221,8 @@ function ParticleText (): React.ReactElement {
                             const centerX = rect.x
                             const centerY = rect.y
 
-                            createParticlesAtPosition(centerX, centerY, 4) // Emit particles from cursor
+                            createParticlesAtPosition(centerX, centerY,
+                                Math.floor(Math.random() * (4 - 2 + 1) + 2)) // Emit particles from cursor
 
                             if (i !== allLetters.length - 1) {
                                 setTimeout(() => {
@@ -202,12 +243,12 @@ function ParticleText (): React.ReactElement {
 
 
     return (
-        <div className='about-container '>
+        <section className='about-container '>
             <div className="particle-text">
                 <div ref={textRef}/>
-                <canvas ref={canvasRef} width="1000px" height="1000px"/>
+                <canvas ref={canvasRef}/>
             </div>
-        </div>
+        </section>
 
     )
 }

@@ -101,7 +101,7 @@ function Cursor (): React.ReactElement {
     }, [])
 
     return (
-        <>
+        <div className='cursor'>
             <div
                 className="cursor-outer"
                 ref={mouseOuter}
@@ -111,7 +111,7 @@ function Cursor (): React.ReactElement {
                 className="cursor-inner"
                 ref={mouseInner}
             />
-        </>
+        </div>
     )
 }
 

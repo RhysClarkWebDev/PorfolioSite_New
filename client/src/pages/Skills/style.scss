@@ -1,0 +1,17 @@
+.skills {
+    width: 90%;
+    margin: 0 auto;
+
+    & .skills-segment {
+        & h2 {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+    & .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        margin-bottom: 60px;
+    }
+}

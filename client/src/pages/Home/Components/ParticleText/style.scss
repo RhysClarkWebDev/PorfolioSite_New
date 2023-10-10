@@ -4,17 +4,22 @@
   height: 100%;
 
   & .particle-text {
-      position: relative;
       text-align: center;
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      pointer-events: none;
 
       & span {
         &.hide {
           opacity: 0;
+        }
+
+        &.name {
+          color: #c7c7c7;
         }
 
         &.typing-cursor {
@@ -48,6 +53,7 @@
             position: relative;
             display: inline-block;
             background-color: transparent;
+            pointer-events: all;
 
             &::after {
               content: '';
@@ -85,6 +91,7 @@
           width: 100vw;
           height: 100vh;
           z-index: 10;
+          pointer-events: none;
       }
   }
 }
