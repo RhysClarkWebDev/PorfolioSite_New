@@ -23,7 +23,7 @@ function Home (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <main id="page-content" className="home-page-centered">
+            <main id="page-content" className="page-centered">
                 <HomeSocials/>
                 <ParticleText/>
             </main>

@@ -4,6 +4,10 @@ import { Helmet } from 'react-helmet'
 // META DATA
 import meta from '@/Data/metaData'
 
+
+// COMPONENTS
+import ContactForm from './Components/ContactForm'
+
 function Contact (): React.ReactElement {
     const thisPage = 'home'
 
@@ -14,8 +18,10 @@ function Contact (): React.ReactElement {
                 <meta name="description" content={meta[thisPage].description} />
             </Helmet>
 
-            <main id="page-content">
-                Contact Page
+            <main id="page-content" className="page-centered">
+                <div className="wrapper">
+                    <ContactForm/>
+                </div>
             </main>
         </>
     )

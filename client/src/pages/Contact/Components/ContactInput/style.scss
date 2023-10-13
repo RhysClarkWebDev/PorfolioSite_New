@@ -1,0 +1,63 @@
+.input-with-label {
+    width: 100%;
+    position: relative;
+
+    & label {
+        font-size: 20px;
+        color: #b6b6b6;
+        position: absolute;
+        top: 27px;
+        z-index: 0;
+        transition: transform var(--animation-timeframe);
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+
+        & svg {
+            width: 30px;
+            height: 30px;
+            padding-right: 15px;
+        }
+    }
+
+
+    & .input-holder {
+        position: relative;
+
+        & svg {
+            position: absolute;
+            display: none;
+            width: 30px;
+            height: 30px;
+            bottom: 15px;
+        }
+
+        & input {
+            background-color: rgba($color: #000000, $alpha: 0);
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #b6b6b6;
+            padding: 15px 40px;
+            color: #b6b6b6;
+            font-size: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+
+
+
+
+    &.focus {
+        & label {
+            z-index: 1;
+            transform: translate(-15px, -40px) scale(0.9);
+        }
+
+        & .input-holder {
+            & svg {
+                display: block;
+            }
+        }
+    }
+}

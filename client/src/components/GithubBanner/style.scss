@@ -14,6 +14,10 @@
     transform: rotateZ(315deg) translate(-160px, -6px);
     transition: transform var(--animation-timeframe);
 
+    & p {
+        color: white;
+    }
+
     &:hover {
         background-color: rgb(69, 138, 207);
     }

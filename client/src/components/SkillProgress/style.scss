@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
   font-size: 20px;
   text-align: center;
   position: relative;
@@ -12,7 +11,7 @@
     transform: rotate(-90deg);
 
     & .progress-ring-circle {
-      stroke: #f0f0f0;
+      // stroke: #b6b6b6;
     }
     
     & .progress-ring-progress {
