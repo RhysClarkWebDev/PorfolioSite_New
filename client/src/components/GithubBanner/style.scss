@@ -33,6 +33,9 @@
         height: 30px;
         transform: rotateZ(315deg) translate(-162px, -32px);
         font-weight: 500;
-        font-size: 14px;
+
+        & p {
+            font-size: 14px;
+        }
     }
 }

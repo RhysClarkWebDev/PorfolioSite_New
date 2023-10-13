@@ -1,10 +1,11 @@
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     transition: transform var(--animation-timeframe) ease-in-out;
     width: 100vw;
+    display: none;
     
     & p {
         color: white;
