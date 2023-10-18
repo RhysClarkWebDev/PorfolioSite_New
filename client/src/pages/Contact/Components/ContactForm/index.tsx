@@ -11,12 +11,21 @@ import Edit from '@/SVG/edit.svg'
 // STYLES
 import './style.scss'
 
+interface FormValues {
+    name: string
+    email: string
+    message: string
+}
+
 function ContactForm (): React.ReactElement {
-    const [formValues, setFormValues] = useState({
+    const [formValues, setFormValues] = useState<FormValues>({
         name: '',
         email: '',
         message: ''
     })
+
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const [activeInput, setActiveInput] = useState(0)
 
@@ -41,8 +50,37 @@ function ContactForm (): React.ReactElement {
         }
     ]
 
-    const handleSubmit = (event: React.FormEvent): void => {
+    const handleSuccess = (): void => {
+        setError(false)
+        setSuccess(true)
+        setActiveInput(0)
+    }
+
+    const handleFailure = (): void => {
+        setError(true)
+        setSuccess(false)
+    }
+
+    const handleSubmit = async (event: React.FormEvent): Promise<void> => {
         event.preventDefault()
+
+        if (formValues.name !== '' && formValues.email !== '' && formValues.message !== '') {
+            try {
+                const result = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formValues)
+                })
+
+                if (result.status === 200) {
+                    handleSuccess()
+                } else {
+                    handleFailure()
+                }
+            } catch (err) {
+                handleFailure()
+            }
+        }
     }
 
     function updateFormValues (id: string, value: string): void {
@@ -53,6 +91,7 @@ function ContactForm (): React.ReactElement {
     }
 
     const handleNextClick = (): void => {
+        console.log(activeInput)
         setActiveInput((prevActiveInput) =>
             (prevActiveInput < inputs.length - 1 ? prevActiveInput + 1 : prevActiveInput))
     }
@@ -96,15 +135,23 @@ function ContactForm (): React.ReactElement {
                     </div>
                 ))}
             </div>
+            {error && <div className="feedback-message error-message">
+                <p>Something went wrong, please try again...</p>
+            </div>}
+
+            {success && <div className="feedback-message success-message">
+                <p>Your email was sent successfully!</p>
+            </div>}
+
+
             <div className="form-buttons">
                 <button
                     className="button next-button"
                     onClick={handleNextClick}
                     disabled={
-                        formValues[inputs[activeInput].name].trim().length < 3 &&
-                        activeInput > 1
+                        formValues[inputs[activeInput].name].trim().length < 3 ||
+                            activeInput === inputs.length - 1
                     }
-
                     type="button"
                 >
                     NEXT

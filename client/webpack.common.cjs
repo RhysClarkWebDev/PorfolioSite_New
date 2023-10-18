@@ -42,7 +42,7 @@ module.exports = {
             '/api': {
                 target: 'http://localhost:8080',
                 pathRewrite: { '^/api': '' },
-                router: () => 'http://localhost:5000',
+                router: () => 'http://localhost:3000',
                 logLevel: 'debug' /* optional */
             }
 

@@ -4,6 +4,7 @@ form {
         display: flex;
         gap: 45px;
         align-items: center;
+        margin-top: 60px;
 
         & .input-value {
             display: flex;
@@ -26,6 +27,23 @@ form {
 
         &.active {
             display: block;
+        }
+    }
+
+    & .feedback-message {
+        margin-top: 30px;
+
+        &.error-message {
+            & p {
+                color: #FC100D;
+            }
+        }
+
+        &.success-message {
+
+            & p {
+                color: #4BB543;
+            }
         }
     }
 
