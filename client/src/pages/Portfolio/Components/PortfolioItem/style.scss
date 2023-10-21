@@ -1,0 +1,94 @@
+.portfolio-item {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 0 rgba(0,0,0,.15);
+    overflow: hidden;
+
+    & a {
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+
+        & .project-bar {
+            position: relative;
+
+            & h2 {
+                font-size: 16px;
+                text-align: center;
+                padding: 5px;
+                background-color: #adadad;
+                color: #494949;
+                border-radius: 2px 2px 0 0;
+            }
+
+            & i {
+                height: 12px;
+                width: 12px;
+                display: inline-block;
+                background-color: #ff5f57;
+                border-radius: 50%;
+                position: absolute;
+                top: 9px;
+                left: 10px;
+
+                &::before {
+                    content: " ";
+                    left: 16px;
+                    background-color: #ffbd2e;
+                    top: 0;
+                    width: 12px;
+                    height: 12px;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: absolute;
+                }
+
+                &::after {
+                    content: " ";
+                    left: 32px;
+                    background-color: #28ca41;
+                    top: 0;
+                    width: 12px;
+                    height: 12px;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: absolute;
+                }
+            }
+        }
+    
+        & .project-item-image {
+            width: 100%;
+            height: auto;
+
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+        & .project-item-overlay {
+            background-color: rgba($color: #000000, $alpha: .5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-100%);
+            transition: transform 300ms;
+        }
+
+    }
+
+
+    &:hover {
+        & .project-item-overlay {
+            transform: translateY(0%);
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 // COMPONENTS
 import ContactInput from '../ContactInput'
@@ -15,6 +15,7 @@ interface FormValues {
     name: string
     email: string
     message: string
+    [key: string]: string
 }
 
 function ContactForm (): React.ReactElement {
@@ -149,7 +150,7 @@ function ContactForm (): React.ReactElement {
                     className="button next-button"
                     onClick={handleNextClick}
                     disabled={
-                        formValues[inputs[activeInput].name].trim().length < 3 ||
+                        (formValues[inputs[activeInput].name]).trim().length < 3 ||
                             activeInput === inputs.length - 1
                     }
                     type="button"
@@ -159,7 +160,7 @@ function ContactForm (): React.ReactElement {
                 <button
                     disabled={formValues.message.trim().length < 3}
                     className="button send-button"
-                    onClick={handleSubmit}
+                    onClick={() => handleSubmit}
                     type="submit"
                 >
                 SUBMIT MESSAGE

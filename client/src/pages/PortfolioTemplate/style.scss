@@ -1,0 +1,24 @@
+.project-container {
+    & .project-intro {
+
+        margin-bottom: 100px;
+
+        & h1 {
+            font-size: 2.5rem;
+        }
+
+        & p {
+            font-size: 1.8rem;
+        }
+    }
+
+
+
+    & .project-text-section {
+        
+        & h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -12,8 +12,10 @@ module.exports = {
             '@/Pages': path.resolve(__dirname, 'src/pages/'),
             '@/Data': path.resolve(__dirname, 'src/data/'),
             '@/Hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@/Contexts': path.resolve(__dirname, 'src/contexts/'),
             '@/Slices': path.resolve(__dirname, 'src/store/Slices/'),
             '@/SVG': path.resolve(__dirname, 'src/assets/svg/'),
+            '@/Images': path.resolve(__dirname, 'src/assets/images/'),
         },
 
         extensions: ['.wasm', '.ts', '.tsx', 'jsx', '.mjs', '.cjs', '.js', '.json']

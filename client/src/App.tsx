@@ -2,11 +2,11 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
-
 // PAGES
 import Home from '@/Pages/Home'
 import Contact from '@/Pages/Contact'
 import Portfolio from '@/Pages/Portfolio'
+import PortfolioTemplate from '@/Pages/PortfolioTemplate'
 import Skills from '@/Pages/Skills'
 
 // LAYOUTS
@@ -24,6 +24,7 @@ function App (): React.ReactElement {
                     <Route path="/" element={<LayoutWithHeaderFooter />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/portfolio/:name" element={<PortfolioTemplate />} />
                         <Route path="/portfolio" element={<Portfolio />} />
                         <Route path="/skills" element={<Skills />} />
                     </Route>

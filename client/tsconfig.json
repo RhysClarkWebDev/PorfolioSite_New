@@ -19,8 +19,10 @@
         "@/Pages/*": ["src/pages/*"],
         "@/Data/*": ["src/data/*"],
         "@/Hooks/*": ["src/hooks/*"],
+        "@/Contexts/*": ["src/contexts/*"],
         "@/Slices/*": ["src/store/Slices/*"],
-        "@/SVG/*": ["src/assets/svg/*"],  
+        "@/SVG/*": ["src/assets/svg/*"],
+        "@/Images/*": ["src/assets/images/*"],
     }
     },
     "include": [
@@ -28,8 +30,12 @@
       "src/components/*",
       "src/layout/*",
       "src/pages/*",
+      
     ],
-    "exclude": ["node_modules"],
+    "exclude": [
+      "node_modules",
+      "client/webpack.common.cjs"
+    ],
     
     
 }
