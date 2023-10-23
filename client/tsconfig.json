@@ -18,6 +18,7 @@
         "@/Layout/*": ["src/layout/*"],
         "@/Pages/*": ["src/pages/*"],
         "@/Data/*": ["src/data/*"],
+        "@/Downloads/*": ["src/assets/downloads/*"],
         "@/Hooks/*": ["src/hooks/*"],
         "@/Contexts/*": ["src/contexts/*"],
         "@/Slices/*": ["src/store/Slices/*"],

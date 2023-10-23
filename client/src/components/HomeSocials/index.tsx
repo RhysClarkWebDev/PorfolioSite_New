@@ -24,7 +24,7 @@ function HomeSocials (): React.ReactElement {
                 </div>
             </a>
 
-            <a href="" target='_blank'>
+            <a href="https://www.linkedin.com/in/rhysclarkwebdev/" target='_blank' rel="noreferrer">
                 <div className='social-link linkedin'>
                     <Linkedin fill='white'/>
                 </div>

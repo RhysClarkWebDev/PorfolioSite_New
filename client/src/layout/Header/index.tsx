@@ -1,5 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useCursor } from '@/Contexts/CursorContext'
+
+// CV
+import Resume from '@/Downloads/rhys-clark_resume.pdf'
 
 // STYLE
 import './style.scss'
@@ -9,6 +13,38 @@ import './style.scss'
 function Footer (): React.ReactElement {
     const [menuActive, setMenuActive] = useState(false)
     const menuToggleRef = useRef<HTMLDivElement | null>(null)
+
+    const cursor = useCursor()
+    const mouseOuter = cursor?.mouseOuter
+    const mouseInner = cursor?.mouseInner
+
+
+    // ADD HOVER EFFECTS TO PARAGRAPHS AND LINK ELEMENTS ON EVERY PAGE CHANGING
+    useEffect(() => {
+        const handleMouseOver = (): void => {
+            mouseOuter?.current?.classList.add('cursor-menu-toggle')
+            mouseInner?.current?.classList.add('cursor-menu-toggle')
+        }
+
+        const handleMouseLeave = (): void => {
+            mouseOuter?.current?.classList.remove('cursor-menu-toggle')
+            mouseInner?.current?.classList.remove('cursor-menu-toggle')
+        }
+
+
+
+
+        menuToggleRef.current?.addEventListener('mouseover', handleMouseOver)
+        menuToggleRef.current?.addEventListener('mouseleave', handleMouseLeave)
+
+
+
+
+        return () => {
+            menuToggleRef.current?.removeEventListener('mouseover', handleMouseOver)
+            menuToggleRef.current?.removeEventListener('mouseleave', handleMouseLeave)
+        }
+    }, [location])
 
 
     const toggleMenu = (): void => {
@@ -51,9 +87,9 @@ function Footer (): React.ReactElement {
                 <Link to="/contact" onClick={toggleMenu}>
                     Contact
                 </Link>
-                <Link to="/downloads/rhys-clark_resume.pdf" onClick={toggleMenu}>
+                <a href={Resume} target="_blank" onClick={toggleMenu} rel="noreferrer">
                     Resume
-                </Link>
+                </a>
             </nav>
             <div ref={menuToggleRef} className="menu-toggle"
                 onClick={toggleMenu}

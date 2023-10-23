@@ -12,7 +12,7 @@
     width: 7px;
     height: 7px;
     background: #fff;
-    transition: width 200ms ease-out, height 200ms ease-out;
+    transition: width 200ms ease-out, height 200ms ease-out, opacity 200ms ease-out;
 
     &.cursor-pressed {
         width: 50px;
@@ -22,6 +22,10 @@
     &.cursor-hover-link {
         opacity: .5;
     }
+
+    &.cursor-menu-toggle{
+      opacity: 0;
+    }
   }
   
   .cursor-outer{
@@ -29,7 +33,7 @@
     height: 50px;
     border: 1px solid #fff;
     transition: top 0.06s ease-out;
-    transition: left 0.06s ease-out, width 200ms ease-out, height 200ms ease-out;
+    transition: left 0.06s ease-out, width 200ms ease-out, height 200ms ease-out, border-radius 200ms ease-out;
 
     &.cursor-hover {
         width: 90px;
@@ -43,6 +47,12 @@
         width: 7px;
         height: 7px;
         mix-blend-mode: difference;
+    }
+
+
+    &.cursor-menu-toggle{
+      border-radius: 3px;
+      opacity: 0;
     }
   }
   

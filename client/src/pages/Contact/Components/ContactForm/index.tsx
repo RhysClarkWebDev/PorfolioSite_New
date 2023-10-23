@@ -67,7 +67,7 @@ function ContactForm (): React.ReactElement {
 
         if (formValues.name !== '' && formValues.email !== '' && formValues.message !== '') {
             try {
-                const result = await fetch('/api/contact', {
+                const result = await fetch('/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formValues)
@@ -160,7 +160,7 @@ function ContactForm (): React.ReactElement {
                 <button
                     disabled={formValues.message.trim().length < 3}
                     className="button send-button"
-                    onClick={() => handleSubmit}
+                    onClick={handleSubmit}
                     type="submit"
                 >
                 SUBMIT MESSAGE

@@ -12,13 +12,47 @@
         }
     }
 
-
+    & .project-images {
+        margin-bottom: 100px;
+    }
 
     & .project-text-section {
+        margin-bottom: 100px;
         
         & h2 {
             font-size: 2rem;
             margin-bottom: 30px;
+            color: #5895d0;
+        }
+
+        & p {
+            margin-bottom: 15px;
+
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+
+
+        &.links {
+            & > div {
+                display: flex;
+                gap: 30px;
+
+                & .result-button {
+                    padding: 10px 20px;
+                    border: 1px dashed #9a9a9a;
+                    transition: border 300ms ease-in-out;
+                    color: #5895d0;
+                    text-decoration: none;
+                    border-radius: 30px;
+
+                    &:hover {
+                        border: 1px solid #5895d0;
+
+                    }
+                }
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ module.exports = {
             '@/Layout': path.resolve(__dirname, 'src/layout/'),
             '@/Pages': path.resolve(__dirname, 'src/pages/'),
             '@/Data': path.resolve(__dirname, 'src/data/'),
+            '@/Downloads': path.resolve(__dirname, 'src/assets/downloads/'),
             '@/Hooks': path.resolve(__dirname, 'src/hooks/'),
             '@/Contexts': path.resolve(__dirname, 'src/contexts/'),
             '@/Slices': path.resolve(__dirname, 'src/store/Slices/'),
@@ -44,7 +45,7 @@ module.exports = {
             '/api': {
                 target: 'http://localhost:8080',
                 pathRewrite: { '^/api': '' },
-                router: () => 'http://localhost:3000',
+                router: () => 'http://localhost:3011',
                 logLevel: 'debug' /* optional */
             }
 
@@ -63,7 +64,7 @@ module.exports = {
             },
 
             {
-                test: /\.(png|jpe?g|gif|webp)$/i,
+                test: /\.(pdf|png|jpe?g|gif|webp)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -116,8 +117,8 @@ module.exports = {
             patterns: [
                 {
                     from: 'public',
-                    to: '/public',
-                    noErrorOnMissing: true
+                    to: 'public',
+                    // noErrorOnMissing: true,
                 }
 
             ]
