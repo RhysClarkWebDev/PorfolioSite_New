@@ -11,10 +11,11 @@
     padding: 0px;
     margin: 0px;
     cursor: none;
+    box-sizing: border-box;
 }
 
 body{
-    background-color: #444444;
+    background-color: #2a2a2a;
     overflow-x: hidden;
 }
 
@@ -39,11 +40,11 @@ main {
     font-family: "Camber", sans-serif;
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     font-size: 3rem;
     width: 100vw;
     background-color: #2a2a2a;
-    height: auto;
+    height: min-content;
 }
 
 

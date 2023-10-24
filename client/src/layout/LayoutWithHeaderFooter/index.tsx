@@ -11,7 +11,6 @@ import { useCursor } from '@/Contexts/CursorContext'
 
 // COMPONENTS
 import Header from '../Header'
-import Footer from '../Footer'
 import Cursor from '@/Components/Cursor'
 import GithubBanner from '@/Components/GithubBanner'
 
@@ -107,8 +106,6 @@ function LayoutWithHeaderFooter (): React.ReactElement {
                 <Outlet/>
                 <Cursor/>
             </div>
-
-            <Footer/>
         </div>
     )
 }

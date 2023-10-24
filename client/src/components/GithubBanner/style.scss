@@ -13,6 +13,7 @@
     left: 0px;
     transform: rotateZ(315deg) translate(-160px, -6px);
     transition: transform var(--animation-timeframe);
+    z-index: 1000;
 
     & p {
         color: white;
