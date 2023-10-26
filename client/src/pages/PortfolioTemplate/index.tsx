@@ -5,6 +5,8 @@ import portfolioItems from '@/Data/portfolioItems'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css'
+import AnimatedPage from '@/Layout/AnimatedPage'
+
 
 // STYLE
 import './style.scss'
@@ -131,4 +133,4 @@ function PortfolioTemplate (): React.ReactElement {
     )
 }
 
-export default PortfolioTemplate
+export default AnimatedPage(PortfolioTemplate)

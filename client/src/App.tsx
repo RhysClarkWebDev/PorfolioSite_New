@@ -1,6 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+
 
 // PAGES
 import Home from '@/Pages/Home'
@@ -17,20 +18,22 @@ import './globalStyle.scss'
 
 
 function App (): React.ReactElement {
+    const location = useLocation()
+
     return (
-        <Router>
-            <AnimatePresence mode="wait">
-                <Routes>
-                    <Route path="/" element={<LayoutWithHeaderFooter />}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/portfolio/:name" element={<PortfolioTemplate />} />
-                        <Route path="/portfolio" element={<Portfolio />} />
-                        <Route path="/skills" element={<Skills />} />
-                    </Route>
-                </Routes>
-            </AnimatePresence>
-        </Router>
+
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<LayoutWithHeaderFooter />}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/portfolio/:name" element={<PortfolioTemplate />} />
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/skills" element={<Skills />} />
+                </Route>
+            </Routes>
+        </AnimatePresence>
+
     )
 }
 

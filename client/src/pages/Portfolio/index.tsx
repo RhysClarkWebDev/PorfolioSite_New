@@ -1,5 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import AnimatedPage from '@/Layout/AnimatedPage'
+
 
 // DATA
 import meta from '@/Data/metaData'
@@ -49,4 +51,4 @@ function Portfolio (): React.ReactElement {
 
 
 
-export default Portfolio
+export default AnimatedPage(Portfolio)

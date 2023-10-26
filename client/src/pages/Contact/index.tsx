@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import AnimatedPage from '@/Layout/AnimatedPage'
 
 // META DATA
 import meta from '@/Data/metaData'
@@ -11,10 +12,11 @@ import ContactForm from './Components/ContactForm'
 // STYLES
 import './style.scss'
 
-function Contact (): React.ReactElement {
+const Contact = (): React.ReactElement => {
     const thisPage = 'home'
 
     return (
+
         <>
             <Helmet>
                 <title>{meta[thisPage].title}</title>
@@ -33,10 +35,11 @@ function Contact (): React.ReactElement {
                 </div>
             </main>
         </>
+
     )
 }
 
 
 
 
-export default Contact
+export default AnimatedPage(Contact)

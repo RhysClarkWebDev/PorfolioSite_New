@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useCursor } from '@/Contexts/CursorContext'
+import { useDispatch } from 'react-redux'
+
+
+
+// SLICES
+import { updatePageLoading } from '@/Slices/PageChangingSlice'
 
 // CV
 import Resume from '@/Downloads/rhys-clark_resume.pdf'
@@ -9,10 +15,11 @@ import Resume from '@/Downloads/rhys-clark_resume.pdf'
 import './style.scss'
 
 
-
 function Footer (): React.ReactElement {
     const [menuActive, setMenuActive] = useState(false)
     const menuToggleRef = useRef<HTMLDivElement | null>(null)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const cursor = useCursor()
     const mouseOuter = cursor?.mouseOuter
@@ -31,14 +38,8 @@ function Footer (): React.ReactElement {
             mouseInner?.current?.classList.remove('cursor-menu-toggle')
         }
 
-
-
-
         menuToggleRef.current?.addEventListener('mouseover', handleMouseOver)
         menuToggleRef.current?.addEventListener('mouseleave', handleMouseLeave)
-
-
-
 
         return () => {
             menuToggleRef.current?.removeEventListener('mouseover', handleMouseOver)
@@ -72,21 +73,42 @@ function Footer (): React.ReactElement {
         }
     }
 
+    function handlePageChange (to: string): void {
+        toggleMenu()
+
+
+        dispatch(updatePageLoading({ isPageChanging: true }))
+
+        setTimeout(() => {
+
+        }, 200)
+
+
+        setTimeout(() => {
+            navigate(to)
+
+            setTimeout(() => {
+                dispatch(updatePageLoading({ isPageChanging: false }))
+            }, 2000)
+        }, 500)
+    }
+
+
     return (
         <header className={'site-header ' + (!menuActive ? 'hidden' : '')}>
             <nav>
-                <Link to="/" onClick={toggleMenu}>
+                <div className="link-hover-effect" onClick={() => { handlePageChange('/') }}>
                     About
-                </Link>
-                <Link to="/portfolio" onClick={toggleMenu}>
+                </div>
+                <div className="link-hover-effect" onClick={() => { handlePageChange('/portfolio') }}>
                     Portfolio
-                </Link>
-                <Link to="/skills" onClick={toggleMenu}>
+                </div>
+                <div className="link-hover-effect" onClick={() => { handlePageChange('/skills') }}>
                     Skills
-                </Link>
-                <Link to="/contact" onClick={toggleMenu}>
+                </div>
+                <div className="link-hover-effect" onClick={() => { handlePageChange('/contact') }}>
                     Contact
-                </Link>
+                </div>
                 <a href={Resume} target="_blank" onClick={toggleMenu} rel="noreferrer">
                     Resume
                 </a>

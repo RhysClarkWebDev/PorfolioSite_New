@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import AnimatedPage from '@/Layout/AnimatedPage'
 
 // COMPONENTS
 import HomeSocials from '@/Components/HomeSocials'
@@ -34,4 +35,4 @@ function Home (): React.ReactElement {
 
 
 
-export default Home
+export default AnimatedPage(Home)

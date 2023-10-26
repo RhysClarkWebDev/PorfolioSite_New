@@ -2,12 +2,6 @@ import React, { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useAppSelector } from '@/Hooks/customReduxThunk'
 import { useCursor } from '@/Contexts/CursorContext'
-// import { useDispatch } from 'react-redux'
-
-
-
-// SLICES
-// import { updatePageLoading } from '@/Slices/PageChangingSlice'
 
 // COMPONENTS
 import Header from '../Header'
@@ -33,6 +27,7 @@ function LayoutWithHeaderFooter (): React.ReactElement {
     useEffect(() => {
         const allParagraphs = document.querySelectorAll('p')
         const allLinks = document.querySelectorAll('a')
+        const allLinkEffects = document.querySelectorAll('.link-hover-effect')
 
         const handleParagraphMouseOver = (): void => {
             mouseOuter?.current?.classList.add('cursor-hover')
@@ -62,6 +57,11 @@ function LayoutWithHeaderFooter (): React.ReactElement {
             link.addEventListener('mouseleave', handleLinkMouseLeave)
         })
 
+        allLinkEffects.forEach((link) => {
+            link.addEventListener('mousemove', handleLinkMouseOver)
+            link.addEventListener('mouseleave', handleLinkMouseLeave)
+        })
+
         return () => {
             allParagraphs.forEach((paragraph) => {
                 paragraph.removeEventListener('mouseover', handleParagraphMouseOver)
@@ -69,6 +69,11 @@ function LayoutWithHeaderFooter (): React.ReactElement {
             })
 
             allLinks.forEach((link) => {
+                link.removeEventListener('mouseover', handleLinkMouseOver)
+                link.removeEventListener('mouseleave', handleLinkMouseLeave)
+            })
+
+            allLinkEffects.forEach((link) => {
                 link.removeEventListener('mouseover', handleLinkMouseOver)
                 link.removeEventListener('mouseleave', handleLinkMouseLeave)
             })
@@ -87,13 +92,6 @@ function LayoutWithHeaderFooter (): React.ReactElement {
 
         isPageChanging ? addAnimatingToBody() : removeAnimatingFromBody()
     }, [isPageChanging])
-
-
-    // setTimeout(() => {
-    //     const flip = !isPageChanging
-    //     dispatch(updatePageLoading({ isPageChanging: flip }))
-    // }, 1000)
-
 
 
     return (

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import AnimatedPage from '@/Layout/AnimatedPage'
+
 
 // COMPONENTS
 import PageIntro from '@/Components/PageIntro'
@@ -75,4 +77,4 @@ function Skills (): React.ReactElement {
 
 
 
-export default Skills
+export default AnimatedPage(Skills)

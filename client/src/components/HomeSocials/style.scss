@@ -2,6 +2,7 @@
     position: absolute;
     left: -40px;
     transition: transform var(--animation-timeframe);
+    z-index: 100;
 
 
     & .social-link {
