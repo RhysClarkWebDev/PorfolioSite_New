@@ -20,6 +20,7 @@
         "@/Data/*": ["src/data/*"],
         "@/Downloads/*": ["src/assets/downloads/*"],
         "@/Hooks/*": ["src/hooks/*"],
+        "@/Utils/*": ["src/utils/*"],
         "@/Contexts/*": ["src/contexts/*"],
         "@/Slices/*": ["src/store/Slices/*"],
         "@/SVG/*": ["src/assets/svg/*"],

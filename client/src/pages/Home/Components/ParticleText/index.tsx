@@ -50,7 +50,6 @@ function ParticleText (): React.ReactElement {
                     child: {
                         element: 'span',
                         text: 'Rhys Clark.',
-                        link: '/skills',
                         class: 'name'
                     }
                 }

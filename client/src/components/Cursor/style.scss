@@ -36,8 +36,8 @@
     transition: left 0.06s ease-out, width 200ms ease-out, height 200ms ease-out, border-radius 200ms ease-out;
 
     &.cursor-hover {
-        width: 90px;
-        height: 90px;
+        width: 40px;
+        height: 40px;
         background-color: #fff;
         mix-blend-mode: difference;
     }

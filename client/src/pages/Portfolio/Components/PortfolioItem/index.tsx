@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import ConvertCamelToWords from '@/Utils/ConvertCamelToWords'
 
 import './style.scss'
 
@@ -40,7 +40,19 @@ function PortfolioItem ({ project, reference }: PortfolioItemTypes): React.React
                     <img src={project.displayImage} alt="" />
                 </div>
                 <div className="project-item-overlay">
+                    <div className="project-item-tags">
+                        {project?.tags.slice(0, 6).map(tag => {
+                            return (
+                                <div key={project.name} className="project-tag">
+                                    <p>{ConvertCamelToWords(tag)}</p>
+                                </div>
+                            )
+                        })}
 
+                        <div className="more-tag project-tag">
+                            <p>More...</p>
+                        </div>
+                    </div>
                 </div>
             </Link>
         </div>

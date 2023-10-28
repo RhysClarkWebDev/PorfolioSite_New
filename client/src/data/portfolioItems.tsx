@@ -90,7 +90,15 @@ const portfolioItems: PortfolioItemsTypes = {
             live: 'https://todo.rhys-clark.com/'
         },
         tags: [
-            ''
+            'HTML',
+            'CSS',
+            'Javascript',
+            'Typescript',
+            'MongoDB',
+            'Express',
+            'React',
+            'Node.JS',
+            'Webpack'
         ],
         meta: {
             title: '',
@@ -154,7 +162,7 @@ const portfolioItems: PortfolioItemsTypes = {
             'CSS',
             'Javascript',
             'React',
-            'Node.JS',
+            'Node',
             'Express',
             'REST API',
             'Webpack Module Bundler w/ Babel'
@@ -164,7 +172,14 @@ const portfolioItems: PortfolioItemsTypes = {
             live: 'https://weather.rhys-clark.com/weather-result'
         },
         tags: [
-            ''
+            'HTML',
+            'CSS',
+            'Javascript',
+            'React',
+            'Node',
+            'Express',
+            'API',
+            'Webpack'
         ],
         meta: {
             title: '',
@@ -228,7 +243,14 @@ const portfolioItems: PortfolioItemsTypes = {
             'Custom Webview SDK'
         ],
         tags: [
-            ''
+            'HTML',
+            'CSS',
+            'Javascript',
+            'Express',
+            'React',
+            'Node',
+            'Webpack',
+            'Custom'
         ],
         meta: {
             title: '',
