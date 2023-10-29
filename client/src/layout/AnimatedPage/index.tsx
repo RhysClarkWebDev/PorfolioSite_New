@@ -8,7 +8,18 @@ import './style.scss'
 const AnimatedPage = (Component: () => React.ReactElement): () => React.ReactElement => {
     const WrappedComponent = (): React.ReactElement => (
         <>
+            {/* <motion.div
+                key="in"
+                className="slide-in"
+                initial={{ x: '-100%' }}
+                animate={{ x: '0%' }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            > */}
             <Component/>
+            {/* </motion.div> */}
+
+
             <motion.div
                 key="in"
                 className="slide-in"

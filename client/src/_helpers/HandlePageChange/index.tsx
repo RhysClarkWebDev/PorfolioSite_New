@@ -9,12 +9,11 @@ export function useHandlePageChange (): (to: string) => void {
     const dispatch = useDispatch()
 
     return (to: string) => {
-        console.log(to)
         dispatch(updatePageLoading({ isPageChanging: true }))
 
         const timeout1 = setTimeout(() => {
             navigate(to)
-        }, 500)
+        }, 1000)
 
         const timeout2 = setTimeout(() => {
             dispatch(updatePageLoading({ isPageChanging: false }))

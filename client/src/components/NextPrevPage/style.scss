@@ -23,6 +23,7 @@
         height: 100%;
         width: 120px;
         pointer-events: all;
+        transition: all 300ms 300ms;
         
         &.next {
             right: 0;
@@ -200,8 +201,23 @@
             }
         }
     }
+
 }
 
+
+.animating {
+    & .next-prev-buttons {
+        & .arrow-button-container {
+            &.next {
+                right: -200px;
+            }
+
+            &.previous {
+                left: -200px;
+            }
+        }
+    }
+}
 
 @media only screen and (max-width: 900px){
     .page-controls {
