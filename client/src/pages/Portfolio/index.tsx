@@ -10,6 +10,8 @@ import PortfolioItems from '@/Data/portfolioItems'
 // COMPONENTS
 import PageIntro from '@/Components/PageIntro'
 import PortfolioItem from './Components/PortfolioItem'
+import NextPrevButtons from '@/Components/NextPrevPage'
+
 
 // STYLES
 import './style.scss'
@@ -40,6 +42,21 @@ function Portfolio (): React.ReactElement {
                             <PortfolioItem reference={key} key={key} project={value} />
                         ))}
                     </section>
+
+                    <NextPrevButtons
+                        previousPage={
+                            {
+                                name: 'About',
+                                link: '/'
+                            }
+                        }
+                        nextPage={
+                            {
+                                name: 'Skills',
+                                link: '/skills'
+                            }
+                        }
+                    />
 
 
                 </div>

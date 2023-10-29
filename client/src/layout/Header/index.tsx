@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useCursor } from '@/Contexts/CursorContext'
-import { useDispatch } from 'react-redux'
-
-
-
-// SLICES
-import { updatePageLoading } from '@/Slices/PageChangingSlice'
+import useHandlePageChange from '@/Helpers/HandlePageChange'
 
 // CV
 import Resume from '@/Downloads/rhys-clark_resume.pdf'
@@ -18,8 +12,7 @@ import './style.scss'
 function Footer (): React.ReactElement {
     const [menuActive, setMenuActive] = useState(false)
     const menuToggleRef = useRef<HTMLDivElement | null>(null)
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const handlePageChangeAnimation = useHandlePageChange()
 
     const cursor = useCursor()
     const mouseOuter = cursor?.mouseOuter
@@ -76,21 +69,7 @@ function Footer (): React.ReactElement {
     function handlePageChange (to: string): void {
         toggleMenu()
 
-
-        dispatch(updatePageLoading({ isPageChanging: true }))
-
-        setTimeout(() => {
-
-        }, 200)
-
-
-        setTimeout(() => {
-            navigate(to)
-
-            setTimeout(() => {
-                dispatch(updatePageLoading({ isPageChanging: false }))
-            }, 2000)
-        }, 500)
+        handlePageChangeAnimation(to)
     }
 
 

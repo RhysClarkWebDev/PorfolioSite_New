@@ -8,6 +8,10 @@ import 'react-awesome-slider/dist/custom-animations/cube-animation.css'
 import AnimatedPage from '@/Layout/AnimatedPage'
 
 
+// COMPONENTS
+import NextPrevButtons from '@/Components/NextPrevPage'
+
+
 // STYLE
 import './style.scss'
 
@@ -122,6 +126,20 @@ function PortfolioTemplate (): React.ReactElement {
 
                                 </div>}
                         </div>
+                        <NextPrevButtons
+                            previousPage={
+                                {
+                                    name: selectedPage.pagination.previous.name,
+                                    link: selectedPage.pagination.previous.to
+                                }
+                            }
+                            nextPage={
+                                {
+                                    name: selectedPage.pagination.next.name,
+                                    link: selectedPage.pagination.next.to
+                                }
+                            }
+                        />
                     </section>
                 </main>
             </>

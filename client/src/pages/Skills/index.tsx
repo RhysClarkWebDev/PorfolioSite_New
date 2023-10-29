@@ -6,6 +6,7 @@ import AnimatedPage from '@/Layout/AnimatedPage'
 // COMPONENTS
 import PageIntro from '@/Components/PageIntro'
 import SkillProgess from '@/Components/SkillProgress'
+import NextPrevButtons from '@/Components/NextPrevPage'
 
 
 // META DATA
@@ -68,6 +69,21 @@ function Skills (): React.ReactElement {
                             </div>
                         </div>
                     </section>
+
+                    <NextPrevButtons
+                        previousPage={
+                            {
+                                name: 'Portfolio',
+                                link: '/portfolio'
+                            }
+                        }
+                        nextPage={
+                            {
+                                name: 'Contact',
+                                link: '/contact'
+                            }
+                        }
+                    />
                 </div>
             </main>
         </>

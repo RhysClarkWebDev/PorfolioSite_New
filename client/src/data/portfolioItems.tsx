@@ -29,6 +29,16 @@ interface PortfolioItem {
         title: string
         description: string
     }
+    pagination: {
+        previous: {
+            name: string
+            to: string
+        }
+        next: {
+            name: string
+            to: string
+        }
+    }
 }
 
   type PortfolioItemsTypes = Record<string, PortfolioItem>
@@ -103,6 +113,16 @@ const portfolioItems: PortfolioItemsTypes = {
         meta: {
             title: '',
             description: ''
+        },
+        pagination: {
+            previous: {
+                name: 'Portfolio',
+                to: '/portfolio'
+            },
+            next: {
+                name: 'React Weather',
+                to: '/portfolio/react-weather'
+            }
         }
     },
 
@@ -184,6 +204,16 @@ const portfolioItems: PortfolioItemsTypes = {
         meta: {
             title: '',
             description: ''
+        },
+        pagination: {
+            previous: {
+                name: 'ToDo App',
+                to: '/portfolio/mern-to-do'
+            },
+            next: {
+                name: 'Webview Game',
+                to: '/portfolio/webview-game'
+            }
         }
     },
 
@@ -255,6 +285,16 @@ const portfolioItems: PortfolioItemsTypes = {
         meta: {
             title: '',
             description: ''
+        },
+        pagination: {
+            previous: {
+                name: 'React Weather',
+                to: '/portfolio/react-weather'
+            },
+            next: {
+                name: 'About',
+                to: '/'
+            }
         }
     }
 

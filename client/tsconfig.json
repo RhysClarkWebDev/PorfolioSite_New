@@ -21,6 +21,7 @@
         "@/Downloads/*": ["src/assets/downloads/*"],
         "@/Hooks/*": ["src/hooks/*"],
         "@/Utils/*": ["src/utils/*"],
+        "@/Helpers/*": ["src/_helpers/*"],
         "@/Contexts/*": ["src/contexts/*"],
         "@/Slices/*": ["src/store/Slices/*"],
         "@/SVG/*": ["src/assets/svg/*"],

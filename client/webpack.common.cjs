@@ -14,6 +14,7 @@ module.exports = {
             '@/Downloads': path.resolve(__dirname, 'src/assets/downloads/'),
             '@/Hooks': path.resolve(__dirname, 'src/hooks/'),
             '@/Utils': path.resolve(__dirname, 'src/utils/'),
+            '@/Helpers': path.resolve(__dirname, 'src/_helpers/'),
             '@/Contexts': path.resolve(__dirname, 'src/contexts/'),
             '@/Slices': path.resolve(__dirname, 'src/store/Slices/'),
             '@/SVG': path.resolve(__dirname, 'src/assets/svg/'),

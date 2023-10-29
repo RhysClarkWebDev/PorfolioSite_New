@@ -8,6 +8,8 @@ import meta from '@/Data/metaData'
 
 // COMPONENTS
 import ContactForm from './Components/ContactForm'
+import NextPrevButtons from '@/Components/NextPrevPage'
+
 
 // STYLES
 import './style.scss'
@@ -32,6 +34,14 @@ const Contact = (): React.ReactElement => {
                     </div>
 
                     <ContactForm/>
+                    <NextPrevButtons
+                        previousPage={
+                            {
+                                name: 'Skills',
+                                link: '/skills'
+                            }
+                        }
+                    />
                 </div>
             </main>
         </>
