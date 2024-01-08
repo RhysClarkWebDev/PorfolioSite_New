@@ -11,6 +11,18 @@ import WebviewGame2 from '@/Images/Portfolio/FootballSweep/3.jpg'
 import WebviewGame3 from '@/Images/Portfolio/FootballSweep/4.jpg'
 import WebviewGame4 from '@/Images/Portfolio/FootballSweep/5.jpg'
 
+
+
+// CHAT APP
+import ChatAppMain from '@/Images/Portfolio/ChatApp/chat-app_conversation.png'
+import ChatApp1 from '@/Images/Portfolio/ChatApp/chat-app_login.png'
+import ChatApp2 from '@/Images/Portfolio/ChatApp/chat-app_new-conversation.png'
+import ChatApp3 from '@/Images/Portfolio/ChatApp/chat-app_message-drawer.png'
+import ChatApp4 from '@/Images/Portfolio/ChatApp/chat-app_group-chat.png'
+import ChatApp5 from '@/Images/Portfolio/ChatApp/chat-app_user-settings.png'
+
+
+
 interface PortfolioItem {
     name: string
     displayImage: string
@@ -41,7 +53,7 @@ interface PortfolioItem {
     }
 }
 
-  type PortfolioItemsTypes = Record<string, PortfolioItem>
+type PortfolioItemsTypes = Record<string, PortfolioItem>
 
 const portfolioItems: PortfolioItemsTypes = {
     'mern-to-do': {
@@ -111,7 +123,7 @@ const portfolioItems: PortfolioItemsTypes = {
             'Webpack'
         ],
         meta: {
-            title: '',
+            title: 'MERN To Do App',
             description: ''
         },
         pagination: {
@@ -202,7 +214,7 @@ const portfolioItems: PortfolioItemsTypes = {
             'Webpack'
         ],
         meta: {
-            title: '',
+            title: 'React Weather App',
             description: ''
         },
         pagination: {
@@ -283,13 +295,106 @@ const portfolioItems: PortfolioItemsTypes = {
             'Custom'
         ],
         meta: {
-            title: '',
+            title: 'Webview React Game',
             description: ''
         },
         pagination: {
             previous: {
                 name: 'React Weather',
                 to: '/portfolio/react-weather'
+            },
+            next: {
+                name: 'Live Chat',
+                to: '/portfolio/live-chat'
+            }
+        }
+    },
+
+    'live-chat': {
+        name: 'Live Chat App',
+        displayImage: ChatAppMain,
+        subtitle: 'With Pusher & Prisma',
+        images: [
+            ChatApp1,
+            ChatApp2,
+            ChatAppMain,
+            ChatApp3,
+            ChatApp4,
+            ChatApp5
+        ],
+        brief: [
+            `The creation of this app was to truly get a feel for a fully live application 
+            with no custom classes, just those that are from tailwind. Along with this I also wanted
+            to create an app that utilised live feedback from the interactions of other users.`
+        ],
+        creation: [
+            'Referencing Facebook Messenger as design inspiration I created a live chat app.',
+            `In order to create the application I needed to know which features I was going to add to it.
+            I knew the app would need to feature: Signup/Login, live messaging, active status for users, group chats,
+            etc.`,
+
+            `To start the app i created a login page, the user can also sign up on this page as well using
+            their email and a password, I also added the ability to create an account and login using a Github
+            or Google account, I could in future expand this. I done this with Next Auth which is very powerful but
+            I havent yet found a way to also allow guest accounts while maintaining the functionality of the app,
+            if this was a generic chat room app this would be alot easier to do.`,
+
+            `Using Prisma I created the Collections and linked it to MongoDB, Prisma is another powerful tool
+            and allows you to easily manage relationships in your database. This proved very handy when integrating 
+            with Pusher to get user ID's for subscriptions to conversations.`,
+
+            `The next steps was really just building out the pages, this was done in Next 14 so the new App Router was 
+            used rather than the normal pages router, this is very simple and allows you to really see the sitemap 
+            during development.`,
+
+            `With the app needing so much information in real time (Group Chat creation, chat creation, 
+            read receipts, messages, chat deletion, and active status) I needed to integrate Pusher.
+            To create the live status, when a user logs in they subscribe to a 'presence' channel which updates a list
+            of active users which is available to all logged in users. In a similar fashion, when a user is in a 
+            conversation they subscribe to that conversations channel, allow read receipts, live messages etc.`
+        ],
+        futureFeatures: [
+            `In the future I would like to add a few features to expand on the existing app. The first feature
+            would be something to add call functionality to the application. I have never worked with the transfer 
+            of audio / keeping an audio line open but it is something I would like to learn while adding to this
+            project.`,
+            `I would also like to add the ability to search for users by their email and be able to add them as a 
+            friend so users would have an extra list of users that they could easily navigate rather than having a 
+            list of all users that are on the app. This isnt too important with it only being a portfolio piece, 
+            I dont expect there to be any real world, every day users of this.`
+        ],
+        technologies: [
+            'HTML',
+            'Tailwind CSS',
+            'Javascipt',
+            'React',
+            'NEXT 14',
+            'Pusher',
+            'MongoDB',
+            'Prisma',
+            'OAuth'
+        ],
+        links: {
+            repo: 'https://github.com/RhysClarkWebDev/Live_Chat_App_NEXT',
+            live: 'https://chat.rhys-clark.com'
+        },
+        tags: [
+            'Next 14',
+            'Javascript',
+            'Pusher',
+            'Next Auth',
+            'Prisma',
+            'Headless UI',
+            'Node'
+        ],
+        meta: {
+            title: 'Next 14 Live Chat App',
+            description: ''
+        },
+        pagination: {
+            previous: {
+                name: 'Webview Game',
+                to: '/portfolio/webview-game'
             },
             next: {
                 name: 'About',
