@@ -351,7 +351,12 @@ const portfolioItems: PortfolioItemsTypes = {
             read receipts, messages, chat deletion, and active status) I needed to integrate Pusher.
             To create the live status, when a user logs in they subscribe to a 'presence' channel which updates a list
             of active users which is available to all logged in users. In a similar fashion, when a user is in a 
-            conversation they subscribe to that conversations channel, allow read receipts, live messages etc.`
+            conversation they subscribe to that conversations channel, allow read receipts, live messages etc.`,
+
+            `In the app there is multiple cases where I had to use Modals, these are things like: Group Chat Creation, 
+            Conversation Drawer, User Settings and Deleting a Conversation, for these Modals I used Headless Ui,
+            I chose to use headless UI for the sake of accessibility as the package has already done the hard part of
+            making usable components for the impaired.`
         ],
         futureFeatures: [
             `In the future I would like to add a few features to expand on the existing app. The first feature
